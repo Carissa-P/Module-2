@@ -31,7 +31,7 @@ var products = [
 		{
 		name: "Honey",
 		vegetarian: true,
-		glutenFree: false,
+		glutenFree: true,
 		price: 5.65
 	},
 		{
@@ -43,38 +43,44 @@ var products = [
 		{
 		name: "Asparagus",
 		vegetarian: true,
-		glutenFree: false,
+		glutenFree: true,
 		price: 2.99
 	},
 	
 		{
 		name: "Quinoa",
 		vegetarian: true,
-		glutenFree: false,
+		glutenFree: true,
 		price: 6.99
 	},
 	{
 		name: "Strawberries",
 		vegetarian: true,
-		glutenFree: false,
+		glutenFree: true,
 		price: 3.99
 	},
 	{
 		name: "Chicken",
 		vegetarian: false,
-		glutenFree: false,
+		glutenFree: true,
 		price: 10.00
 	},
 	{
 		name: "Spinach",
 		vegetarian: true,
-		glutenFree: false,
+		glutenFree: true,
 		price: 3.50
+	},
+	{
+		name: "Spaghetti",
+		vegetarian: true,
+		glutenFree: false,
+		price: 1.99
 	},
 	{
 		name: "Sunflower Seeds",
 		vegetarian: true,
-		glutenFree: false,
+		glutenFree: true,
 		price: 4.75
 	}
 
