@@ -5,10 +5,6 @@
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<header>
-	<h1> Ottawa's Grocer </h1>
-</header>
-	
 <body>
 
 <!-- Tab links, each one with an onclick event associated with it -->
@@ -23,20 +19,18 @@
   <h3>Client Information</h3>
   <p>Tell us a bit about you.</p>
 	Choose a Category:
-
-	<form id="dietSelect" name="dietSelect">
-	
-		<input type="checkbox" name="Pref" value="Veg"  onclick = "populateListProductChoices(this.id, 'displayProduct')">Vegetarian<br>
-		<input type="checkbox" name="Pref" value="Glut" onclick = "populateListProductChoices(this.id, 'displayProduct')">Gluten Free<br>
-		<input type="checkbox" name="Pref" value="Org"  onclick = "populateListProductChoices(this.id, 'displayProduct')">Organic<br>
-		
-	</form>
+    <form id="dietSelect" name="dietSelect">
+      <input type="checkbox" name="Veg" value="Vegetarian" onclick="populateListProductChoices('this.id', 'displayProduct')"> Vegetarian<br>
+      <input type="checkbox" name="Glut" value="GlutenFree" onclick="populateListProductChoices('this.id', 'displayProduct')"> GlutenFree<br>
+      <input type="checkbox" name="Organic" value="Organic" onclick="populateListProductChoices('this.id', 'displayProduct')"> Organic<br>
+     
+    </form>
 </div>
 
 <div id="Products" class="tabcontent">
   <h3>Your targeted products</h3>
   <p>We preselected products based on your restrictions.</p>
-	 Choose items to buy
+	 Choose items to buy:
 	 <div id="displayProduct"></div>
 	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
 		Add selected items to cart.
