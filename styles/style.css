@@ -39,7 +39,7 @@
 h1{
   font-size: 35px;
   text-align: center;
-  background: rgba(0, 128, 0, 0.3)
+  color: #ffffff;
   
 }
 page-container {
@@ -59,7 +59,7 @@ footer {
   text-align: center;
   font-size: 15px;
   padding: 10px;
-  background-color: LightGray;
+  background-color: #ffffff;
 }
 
 body {
