@@ -6,18 +6,21 @@ var products = [
 		name: "Brocoli",
 		vegetarian: true,
 		glutenFree: true,
+		organic: false,
 		price: 1.99
 	},
 	{
 		name: "Bread",
 		vegetarian: true,
 		glutenFree: false,
+		organic: false,
 		price: 2.35
 	},
 	{
 		name: "Salmon",
 		vegetarian: false,
 		glutenFree: true,
+		organic: false,
 		price: 10.00
 	},
 	
@@ -25,13 +28,15 @@ var products = [
 		name: "Sushi",
 		vegetarian: false,
 		glutenFree: false,
+		organic: false,
 		price: 12.99
 	},
 	
 		{
-		name: "Honey",
+		name: "Organic Honey",
 		vegetarian: true,
 		glutenFree: true,
+		organic: true,
 		price: 5.65
 	},
 		{
@@ -48,39 +53,45 @@ var products = [
 	},
 	
 		{
-		name: "Quinoa",
+		name: "Organic Quinoa",
 		vegetarian: true,
 		glutenFree: true,
+		organic: true,
 		price: 6.99
 	},
 	{
-		name: "Strawberries",
+		name: "Organic Strawberries",
 		vegetarian: true,
 		glutenFree: true,
+		organic: true,
 		price: 3.99
 	},
 	{
 		name: "Chicken",
 		vegetarian: false,
 		glutenFree: true,
+		organic: false,
 		price: 10.00
 	},
 	{
 		name: "Spinach",
 		vegetarian: true,
 		glutenFree: true,
+		organic: false,
 		price: 3.50
 	},
 	{
 		name: "Spaghetti",
 		vegetarian: true,
 		glutenFree: false,
+		organic: false,
 		price: 1.99
 	},
 	{
 		name: "Sunflower Seeds",
 		vegetarian: true,
 		glutenFree: true,
+		organic: false,
 		price: 4.75
 	}
 
