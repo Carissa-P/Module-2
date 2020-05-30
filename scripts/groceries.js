@@ -55,7 +55,7 @@ var products = [
 		{
 		name: "Organic Quinoa",
 		vegetarian: true,
-		glutenFree: true,
+		glutenFree: false,
 		organic: true,
 		price: 6.99
 	},
@@ -87,6 +87,13 @@ var products = [
 		organic: false,
 		price: 1.99
 	},
+  	{
+		name: "Hamburgers",
+		vegetarian: false,
+		glutenFree: true,
+		organic: false,
+		price: 12.70
+	},
 	{
 		name: "Sunflower Seeds",
 		vegetarian: true,
@@ -96,35 +103,70 @@ var products = [
 	}
 
 ];
-	
-
 
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
 
-function restrictListProducts(prods, restriction) {
-	let product_names = [];
-	for (let i=0; i<prods.length; i+=1) {
-		if ((restriction == "Vegetarian") && (prods[i].vegetarian == true)){
-			product_names.push(prods[i].name);
-		}
-		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
-			product_names.push(prods[i].name);
-		}
-		else if (restriction == "None"){
-			product_names.push(prods[i].name);
-		}
-	}
-	return product_names;
+function restrictListProducts(prods, restrictions) {
+  prods.sort(compare);
+
+  let product_names = [];
+
+  for (let i = 0; i < prods.length; i += 1) {
+     if(restrictions.includes("None")){
+      product_names.push(prods[i]);
+    }
+
+    else if((restrictions.includes("Vegetarian"))&&(!restrictions.includes("GlutenFree"))&&(!restrictions.includes("Organic"))&&(prods[i].vegetarian == true)){
+      product_names.push(prods[i]);
+    }
+
+    else if((!restrictions.includes("Vegetarian"))&&(restrictions.includes("GlutenFree"))&&(!restrictions.includes("Organic"))&&(prods[i].glutenFree == true)){
+      product_names.push(prods[i]);
+    }
+
+    else if((!restrictions.includes("Vegetarian"))&&(!restrictions.includes("GlutenFree"))&&(restrictions.includes("Organic"))&&(prods[i].organic == true)){
+      product_names.push(prods[i]);
+    }
+
+    else if((restrictions.includes("Vegetarian"))&&(restrictions.includes("GlutenFree"))&&(!restrictions.includes("Organic"))&&(prods[i].vegetarian == true)&&(prods[i].glutenFree == true)){
+      product_names.push(prods[i]);
+    }
+
+    else if((restrictions.includes("Vegetarian"))&&(!restrictions.includes("GlutenFree"))&&(restrictions.includes("Organic"))&&(prods[i].vegetarian == true)&&(prods[i].organic == true)){
+      product_names.push(prods[i]);
+    }
+
+     else if((!restrictions.includes("Vegetarian"))&&(restrictions.includes("GlutenFree"))&&(restrictions.includes("Organic"))&&(prods[i].organic == true)&&(prods[i].glutenFree == true)){
+      product_names.push(prods[i]);
+    }
+
+    else if((restrictions.includes("Vegetarian"))&&(restrictions.includes("GlutenFree"))&&(restrictions.includes("Organic"))&&(prods[i].vegetarian == true)&&(prods[i].glutenFree == true)&&(prods[i].organic == true)){
+      product_names.push(prods[i]);
+    }
+
+  }
+
+  return product_names;
 }
 
 // Calculate the total price of items, with received parameter being a list of products
+
 function getTotalPrice(chosenProducts) {
-	totalPrice = 0;
-	for (let i=0; i<products.length; i+=1) {
-		if (chosenProducts.indexOf(products[i].name) > -1){
-			totalPrice += products[i].price;
-		}
-	}
-	return totalPrice;
+  console.log(chosenProducts);
+
+  totalPrice = 0;
+  for (let i = 0; i < products.length; i += 1) {
+    if (chosenProducts.indexOf(products[i].name + " - $" + products[i].price) > -1) {
+      totalPrice += products[i].price;
+    }
+  }
+  return totalPrice.toFixed(2);
+}
+// Sort the items by price - Reference https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
+function compare(a, b) {
+  if (a.price < b.price) return -1;
+  if (a.price > b.price) return 1;
+  
+  return 0;
 }
