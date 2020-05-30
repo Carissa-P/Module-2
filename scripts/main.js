@@ -20,9 +20,6 @@ function openInfo(evt, tabName) {
 	evt.currentTarget.className += " active";
 
 }
-
-
-	
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
@@ -34,15 +31,23 @@ function populateListProductChoices(slct1, slct2) {
     s2.innerHTML = "";
 		
 	// obtain a reduced list of products based on restrictions
-    var optionArray = restrictListProducts(products, s1.value);
+  
+    var array = []
+    var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
 
+    for (var i = 0; i < checkboxes.length; i++) {
+    array.push(checkboxes[i].value)
+}
+
+  var optionArray = restrictListProducts(products, array);
+
+console.log(optionArray)
 	// for each item in the array, create a checkbox element, each containing information such as:
-	// <input type="checkbox" name="product" value="Bread">
-	// <label for="Bread">Bread/label><br>
-		
+
 	for (i = 0; i < optionArray.length; i++) {
 			
-		var productName = optionArray[i];
+    var productName = optionArray[i].name + " - $" + optionArray[i].price;
+
 		// create the checkbox and add in HTML DOM
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
