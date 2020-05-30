@@ -1,5 +1,5 @@
 /* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
-/* This part of the code is by our professor */
+
 /* Style the tab */
 .tab {
   overflow: hidden;
@@ -35,7 +35,15 @@
   border: 1px solid #ccc;
   border-top: none;
 }
-/* ends here*/
 
+h1{
+  font-size: 25px;
+  text-align: center;
+  
+}
+
+footer{
+  font-size: 14px;
+}
 
 
