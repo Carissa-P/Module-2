@@ -41,7 +41,6 @@ function populateListProductChoices(slct1, slct2) {
 
   var optionArray = restrictListProducts(products, array);
 
-console.log(optionArray)
 	// for each item in the array, create a checkbox element, each containing information such as:
 
 	for (i = 0; i < optionArray.length; i++) {
