@@ -39,6 +39,7 @@
 h1{
   font-size: 35px;
   text-align: center;
+  background: rgba(0, 128, 0, 0.3)
   
 }
 page-container {
@@ -62,5 +63,5 @@ footer {
 }
 
 body {
-  background: rgba(0, 128, 0, 0.3) /* Green background with 30% opacity */
+  background: rgba(0, 128, 0, 0.3)
 }
