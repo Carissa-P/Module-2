@@ -39,9 +39,8 @@
 h1{
   font-size: 35px;
   text-align: center;
-  color: #ffffff;
-  
 }
+
 page-container {
   position: relative;
   min-height: 100vh;
