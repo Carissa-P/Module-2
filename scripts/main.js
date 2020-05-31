@@ -1,5 +1,6 @@
 // This function is called when any of the tab is clicked
 // It is adapted from https://www.w3schools.com/howto/howto_js_tabs.asp
+// Reference: PROF: https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery
 
 function openInfo(evt, tabName) {
 
@@ -31,8 +32,9 @@ function populateListProductChoices(slct1, slct2) {
     s2.innerHTML = "";
 		
 	// obtain a reduced list of products based on restrictions
-  
+ 
     var array = []
+    //Reference for line below; https://stackoverflow.com/questions/590018/getting-all-selected-checkboxes-in-an-array
     var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
 
     for (var i = 0; i < checkboxes.length; i++) {
